@@ -1,3 +1,8 @@
+
+# scoop-apps
+
+A few application manifests I have created. Thanks for the original authors who I sometimes used their manifests to help create them.
+
 # Scoop Bucket Template
 
 <!-- Uncomment the following line after replacing placeholders -->
@@ -21,6 +26,8 @@ Template bucket for [Scoop](https://scoop.sh), the Windows command-line installe
 5. Replace the placeholder repository string in `bin/auto-pr.ps1`.
 6. Create new manifests by copying `bucket/app-name.json.template` to
    `bucket/<app-name>.json`.
+
+
 7. Commit and push changes.
 8. If you'd like your bucket to be indexed on `https://scoop.sh`, add the
    topic `scoop-bucket` to your repository.
