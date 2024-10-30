@@ -14,7 +14,7 @@
             "hash": "945e8dd9313d96c0e3077de0408f5b025c3015b543fea0c7cb56a5b6c06bfcfb"
         }
     },
-    "depends": "lemon/libportable",
+    "depends": "EdenWise_scoop-apps/libportable",
     "pre_install": [
         "if ($env:CI -eq \"true\") { return }",
         "  Remove-Item \"$dir\\setup.exe\", \"$dir\\core\\updater.*\" -Force",
