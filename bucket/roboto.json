@@ -7,11 +7,12 @@
         "To install:",
         "",
         "$FONTS = (New-Object -ComObject Shell.Application).Namespace(0x14)",
-        "dir $env:SCOOP/apps/roboto/current/*.ttf\" | %{ $FONTS.CopyHere($_.FullName) }",
+        "dir \"$env:SCOOP/apps/roboto/current/*.ttf\" | %{ $FONTS.CopyHere($_.FullName) }",
         "",
         "To uninstall:",
         "",
-        "To uninstall it completely, you have to delete it from the fonts in the control panel, which can be launched with ``control fonts``."
+        "Open the control panel with `control.exe fonts` and remove them completely.",
+        ""
     ],
     "url": "https://github.com/googlefonts/roboto-2/releases/download/v2.136/roboto-hinted.zip",
     "hash": "C4528791DE55ADE3D6C698738A70B457311E4DD296C5A3318AA729874067FA6A",
