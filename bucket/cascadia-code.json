@@ -3,29 +3,20 @@
     "description": "Cascadia is a fun new coding font that comes bundled with Windows...",
     "homepage": "https://github.com/microsoft/cascadia-code",
     "license": "OFL-1.1",
+    "notes":  [
+        "echo 'To install:'",
+        "echo ''",
+        "echo '$fonts = (New-Object -ComObject Shell.Application).Namespace(0x14)`",
+        "echo 'dir $env:SCOOP/apps/roboto/current/*.ttf\" | %{ $fonts.CopyHere($_.fullname) }",
+        "echo ''",
+        "echo 'To uninstall:'",
+        "echo ''",
+        "echo 'To uninstall it completely, you have to delete it from the fonts in the control panel, which can be launched with ``control fonts``.' -Foreground Magenta"
+    ],
     "url": "https://ghproxy.com/https://github.com/microsoft/cascadia-code/releases/download/v2404.23/CascadiaCode-2404.23.zip#/CascadiaCode.zip",
     "hash": "a911410626c0e09d03fa3fdda827188fda96607df50fecc3c5fee5906e33251b",
     "extract_dir": "CascadiaCode/ttf",
-    "installer": {
-        "script": [
-            "if(!(is_admin)) { error \"Admin rights are required, please run 'sudo scoop install $app'\"; exit 1 }",
-            "Get-ChildItem $dir -filter 'CascadiaCodePL.ttf' -Recurse | ForEach-Object {",
-            "  New-ItemProperty -Path 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Fonts' -Name $_.Name.Replace($_.Extension, ' (TrueType)') -Value $_.Name -Force | Out-Null",
-            "  Copy-Item $_.FullName -destination \"$env:windir\\Fonts\"",
-            "}"
-        ]
-    },
-    "uninstaller": {
-        "script": [
-            "if(!(is_admin)) { error \"Admin rights are required, please run 'sudo scoop uninstall $app'\"; exit 1 }",
-            "Get-ChildItem $dir -filter 'CascadiaCodePL.ttf' | ForEach-Object {",
-            "  Remove-ItemProperty -Path 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Fonts' -Name $_.Name.Replace($_.Extension, ' (TrueType)') -Force -ErrorAction SilentlyContinue",
-            "  Remove-Item \"$env:windir\\Fonts\\$($_.Name)\" -Force -ErrorAction SilentlyContinue",
-            "}"
-        ]
-    },
     "checkver": "github",
-    // "depends": "sudo",
     "autoupdate": {
         "url": "https://ghproxy.com/https://github.com/microsoft/cascadia-code/releases/download/v$version/CascadiaCode-$version.zip#/CascadiaCode.zip"
     }
