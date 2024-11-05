@@ -1,24 +1,22 @@
 {
-    "version": "2.138",
-    "description": "Roboto type family. ",
-    "homepage": "https://fonts.google.com/specimen/Roboto",
-    "license": "Apache License Version 2.0",
-    "url": "https://github.com/googlefonts/roboto-2/releases/download/v2.136/roboto-hinted.zip",
-    "hash": "C4528791DE55ADE3D6C698738A70B457311E4DD296C5A3318AA729874067FA6A",
+    "version": "2.136",
+    "description": "Font from Google, signature family for san-serif typefaces.",
+    "homepage": "https://github.com/googlefonts/roboto-2",
+    "license": "Apache-2.0",
     "notes":  [
         "echo 'To install:'",
         "echo ''",
         "echo '$fonts = (New-Object -ComObject Shell.Application).Namespace(0x14)`",
-        "echo 'dir $env:SCOOP/apps/roboto/current/*.ttf\" | %{ $fonts.CopyHere($_.fullname) }"
+        "echo 'dir $env:SCOOP/apps/roboto/current/*.ttf\" | %{ $fonts.CopyHere($_.fullname) }",
+        "echo ''",
+        "echo 'To uninstall:'",
+        "echo ''",
+        "echo 'To uninstall it completely, you have to delete it from the fonts in the control panel, which can be launched with ``control fonts``.' -Foreground Magenta"
     ],
-    "uninstaller": {
-        "script": [
-            "if ($cmd -eq \"uninstall\") {",
-            "    Write-Host \"To uninstall it completely, you have to delete it from the fonts in the control panel, which can be launched with ``control fonts``.\" -Foreground Magenta",
-            "}"
-        ]
-    },
-    "autoupdate": {
-        "url": "https://fonts.google.com/download?family=Roboto#/dl.7z"
-    }
+    "url": "https://github.com/googlefonts/roboto-2/releases/download/v2.136/roboto-hinted.zip",
+    "hash": "C4528791DE55ADE3D6C698738A70B457311E4DD296C5A3318AA729874067FA6A",
+    "extract_dir": "roboto-hinted",
+    // "autoupdate": {
+    //     "url": "https://fonts.google.com/download?family=Roboto#/dl.7z"
+    // }
 }
