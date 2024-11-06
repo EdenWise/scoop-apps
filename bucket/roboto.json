@@ -6,8 +6,8 @@
     "notes":  [
         "To install:",
         "",
-        "$INSTALLER = (New-Object -ComObject Shell.Application).Namespace(0x14)",
-        "dir \"$env:SCOOP/apps/roboto/current/*.ttf\" | %{ $INSTALLER.CopyHere($_.FullName) }",
+        "$INSTR = (New-Object -ComObject Shell.Application).Namespace(0x14)",
+        "dir \"$env:SCOOP/apps/roboto/current/*.ttf\" | %{ $INSTR.CopyHere($_.FullName) }",
         "",
         "To uninstall:",
         "",
