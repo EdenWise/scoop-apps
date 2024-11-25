@@ -26,7 +26,11 @@
             "Inkscape"
         ]
     ],
-    "persist": "share\\inkscape\\themes",
+    "persist": [
+        "share\\inkscape\\themes",
+        ## "share\\inkscape\\pixmaps",
+        "share\\inkscape\\ui"
+    ],
     "checkver": {
         "script": [
             "$redirUrl = [System.Net.HttpWebRequest]::Create('https://inkscape.org/release/').GetResponse().ResponseUri.AbsoluteUri",
