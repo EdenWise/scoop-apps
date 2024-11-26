@@ -20,7 +20,8 @@
     ],
     "shortcuts": [
         [
-            "bin\\inkscape.exe"
+        "bin\\inkscape.exe",
+        "inkscape"
         ]
     ],
     "persist": [
