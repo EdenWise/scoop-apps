@@ -17,13 +17,13 @@
     "bin": [
         [
         "bin\\inkscape.com",
-        "inkscape.exe"
+        "inkscape"
         ]
     ],
     "shortcuts": [
         [
-        "bin\\inkscape.exe",
-        "Inkscape"
+            "bin\\inkscape.exe",
+            "Inkscape"
         ]
     ],
     "persist": [
