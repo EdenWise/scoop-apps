@@ -15,7 +15,7 @@
     },
     "extract_dir": "inkscape",
     "bin": [
-        "bin\\inkscape.exe",
+        "bin\\inkscape.com",
         "bin\\inkview.com"
     ],
     "shortcuts": [
