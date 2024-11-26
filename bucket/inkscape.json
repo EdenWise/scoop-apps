@@ -28,7 +28,6 @@
     ],
     "persist": [
         "share\\inkscape\\themes",
-        ## "share\\inkscape\\pixmaps",
         "share\\inkscape\\ui"
     ],
     "checkver": {
