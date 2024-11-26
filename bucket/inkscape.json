@@ -3,6 +3,10 @@
     "description": "Professional vector graphics editor",
     "homepage": "https://inkscape.org",
     "license": "GPL-3.0-or-later",
+    "notes": [
+        "The persist directories are for theming. Trying to do this",
+        "in APPDATA fails at this time."
+    ],
     "architecture": {
         "64bit": {
             "url": "https://media.inkscape.org/dl/resources/file/inkscape-1.4_2024-10-11_86a8ad7-x64.7z",
