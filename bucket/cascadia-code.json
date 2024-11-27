@@ -1,9 +1,9 @@
 {
-    "version": "2404.23",
+    "version": "2407.24",
     "description": "Cascadia is a fun new coding font that comes bundled with Windows...",
     "homepage": "https://github.com/microsoft/cascadia-code",
     "license": "OFL-1.1",
-    "notes":  [
+    "notes": [
         "To install:",
         "",
         "$INSTR = (New-Object -ComObject Shell.Application).Namespace(0x14)",
@@ -14,8 +14,8 @@
         "control.exe fonts",
         ""
     ],
-    "url": "https://github.com/microsoft/cascadia-code/releases/download/v2404.23/CascadiaCode-2404.23.zip",
-    "hash": "a911410626c0e09d03fa3fdda827188fda96607df50fecc3c5fee5906e33251b",
+    "url": "https://ghproxy.com/https://github.com/microsoft/cascadia-code/releases/download/v2407.24/CascadiaCode-2407.24.zip#/CascadiaCode.zip",
+    "hash": "e67a68ee3386db63f48b9054bd196ea752bc6a4ebb4df35adce6733da50c8474",
     "extract_dir": "ttf",
     "checkver": "github",
     "autoupdate": {
