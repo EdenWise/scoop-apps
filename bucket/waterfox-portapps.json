@@ -2,29 +2,32 @@
     "version": "6.5.1-30",
     "description": "An open-source web browser intended to be speedy, ethical and maintain support for legacy extensions.",
     "homepage": "https://portapps.io/app/waterfox-portable/",
-    "license": {
-        "identifier": "MPL-2.0",
-        "url": "https://github.com/MrAlex94/Waterfox/blob/master/LICENSE"
+    "license": "MPL-2.0",
+    "notes": [
+        "This version can be part of a long release cycle... possibly as long as nine or ten months."
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/portapps/waterfox-portable/releases/download/6.5.1-30/waterfox-portable-win64-6.5.1-30-setup.exe#/dl.7z"
+            "hash": "ed4db19a68be4fb5decc3b303f2cdba155c163f8819b0806011f07a6b70f1554"
+            // "url": "https://github.com/portapps/waterfox-portable/releases/download/6.5.1-30/waterfox-portable-win64-6.5.1-30.7z"
+        }
     },
+    "pre_install": [
+        "if(!(Test-Path \"$persist_dir\\waterfox-portable.yml\")) { New-Item \"$dir\\waterfox-portable.yml\" | Out-Null }",
+        "mv waterfox-portable.exe waterfox.exe"
+    ],
+    "bin": "waterfox.exe",
+    "shortcuts": [
+        [
+            "waterfox.exe",
+            "Waterfox"
+        ]
+    ],
     "persist": [
         "data",
         "waterfox-portable.yml"
     ],
-    "architecture": {
-        "64bit": {
-            "url": "https://github.com/portapps/waterfox-portable/releases/download/6.5.1-30/waterfox-portable-win64-6.5.1-30.7z"
-            // "url": "https://github.com/portapps/waterfox-portable/releases/download/6.0.7-29/waterfox-portable-win64-6.0.7-29.7z#/dl.7z",
-            "hash": "ed4db19a68be4fb5decc3b303f2cdba155c163f8819b0806011f07a6b70f1554"
-        }
-    },
-    "bin": "waterfox-portable.exe",
-    "shortcuts": [
-        [
-            "waterfox-portable.exe",
-            "Waterfox"
-        ]
-    ],
-    "pre_install": "if(!(Test-Path \"$persist_dir\\waterfox-portable.yml\")) { New-Item \"$dir\\waterfox-portable.yml\" | Out-Null }",
     "checkver": {
         "url": "https://github.com/portapps/waterfox-portable/releases",
         "regex": "\\/releases\\/tag\\/(?:v|V)?(\\d{1}\\.[\\d.-]+)"
