@@ -6,7 +6,7 @@
     "notes": [
         "Libportable's setdll64.exe writes the current PATH in mozglue.dll and editing it directly fails to work. A new mozglue.dll must patched every time for portability. A script automates this behavior. To run Waterfox type:",
         "",
-        "waterfox.ps1 [...args]",
+        "waterfox.ps1",
         ""
     ],
     "architecture": {
@@ -15,7 +15,8 @@
             "hash": "sha512:bb667dfc876c5051107706c92414912d4b44fa9ac8d1402701676741afa830bc799cd4617dcbb4cd544d4a33b96ce76d9b93bcd9bc03e2af59e780660cb1a9cb"
         }
     },
-    ## "extract_dir": "core",
+    // "extract_dir": "core",
+    "depends": "hoilc_scoop-lemon/libportable",
     "post_install": [
     ],
     "bin": "waterfox.exe",
@@ -26,8 +27,8 @@
         ]
     ],
     "persist": [
-        "distribution",
-        "profile"
+        // "distribution",
+        // "profile"
     ],
     "checkver": {
         "github": "https://github.com/BrowserWorks/Waterfox"
