@@ -9,18 +9,18 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/portapps/waterfox-portable/releases/download/6.5.1-30/waterfox-portable-win64-6.5.1-30-setup.exe#/dl.7z"
-            "hash": "ed4db19a68be4fb5decc3b303f2cdba155c163f8819b0806011f07a6b70f1554"
+            "hash": "D291B9BBE343DB133442F95D322A415C2805B7CAB6582DA53A7F413FD2254EA3"
             // "url": "https://github.com/portapps/waterfox-portable/releases/download/6.5.1-30/waterfox-portable-win64-6.5.1-30.7z"
         }
     },
     "pre_install": [
         "if(!(Test-Path \"$persist_dir\\waterfox-portable.yml\")) { New-Item \"$dir\\waterfox-portable.yml\" | Out-Null }",
-        "mv waterfox-portable.exe waterfox.exe"
+        "#mv waterfox-portable.exe waterfox.exe"
     ],
-    "bin": "waterfox.exe",
+    "bin": "waterfox-portable.exe",
     "shortcuts": [
         [
-            "waterfox.exe",
+            "waterfox-portable.exe",
             "Waterfox"
         ]
     ],
