@@ -8,5 +8,4 @@ bucket/gammy.json
 #
 bucket/libportable.json
 bucket/regfont.json
-bucket/waterfox-portapps.json
-bucket/waterfox-libportable.json
+# bucket/waterfox-portapps.json
