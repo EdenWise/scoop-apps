@@ -1,7 +1,7 @@
 
 # scoop-apps
 
-A few application manifests I have created. Thanks for the original authors who I sometimes used their manifests to help create them. The Scoop Directory has the listings, i.e.:
+A few application manifests I have created. I would like to thank the authors who originally some of these manifests.
 
 ````
 scoop bucket add EdenWise_scoop-apps https://github.com/EdenWise/scoop-apps
