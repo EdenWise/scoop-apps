@@ -1,0 +1,23 @@
+{
+  "version": "1.582",
+  "description": "[The font] Merriweather offers a Renaissance warmth while using proportions which are space-saving. It is suitable for editorial design, news and other kinds of space sensitive typography.",
+  "homepage": "https://github.com/EbenSorkin/Merriweather",
+  "license": "OFL-1.1",
+  "notes": [
+      "To install:",
+      "",
+      "https://gist.github.com/EdenWise/7a2f40dbd4bc164c62373673c921949e",
+      "",
+      "To uninstall:",
+      "",
+      "control.exe fonts",
+      ""
+  ],
+  "url": "https://github.com/SorkinType/Merriweather/archive/refs/tags/v1.582.zip#/dl.7z",
+  "hash": "329CC53C1733AF4D340B9C5E42C21622378A8D09D41EE317D5D6FD9C3F9B27CF",
+  "extract_dir": "Merriweather-1.5.82",
+  "checkver": "github",
+  "autoupdate": {
+      "url": "https://github.com/SorkinType/Merriweather/archive/refs/tags/$version.zip"
+  }
+}
