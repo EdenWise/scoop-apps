@@ -5,7 +5,7 @@
     "license": "MPL-2.0",
     "notes": [
         "Installed from Portapps (https://portapps.io/app/waterfox-portable/)",
-        "This version can be part of a long release cycle... possibly as long as nine or ten months."
+        "This application can be part of a long release cycle (six month+)."
     ],
     "architecture": {
         "64bit": {
