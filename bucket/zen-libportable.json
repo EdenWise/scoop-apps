@@ -28,13 +28,16 @@
         "  Write-Output '",
         "$DIR_ZEN = \"$env:SCOOP\\apps\\zen-libportable\\current\"",
         "if ( Select-String -SimpleMatch $env:USERPROFILE $DIR_ZEN\\mozglue.dll ) {",
-        "  . $DIR_ZEN\\floorp.exe }",
+        "  . $DIR_ZEN\\zen.exe }",
         "else {",
         "  Copy-Item -Force $DIR_ZEN\\mozglue.dll.bck    $DIR_ZEN\\mozglue.dll",
         "  Copy-Item -Force $DIR_ZEN\\portable64.dll.bck $DIR_ZEN\\portable64.dll",
         "  setdll64.exe  /d:$DIR_ZEN\\portable64.dll     $DIR_ZEN\\mozglue.dll",
-        "  . $DIR_ZEN\\floorp.exe }",
+        "  . $DIR_ZEN\\zen.exe }",
         "  ' | Out-File \"$dir\\zen.ps1\""
+    ],
+    "post_install": [
+        "zen.ps1 -CreateProfile \"Scoop-Opt $persist_dir\\profile\""
     ],
     "bin": "zen.ps1",
     // "persist": [
