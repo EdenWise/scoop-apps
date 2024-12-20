@@ -35,9 +35,9 @@
         "  . $DIR_ZEN\\zen.exe }",
         "  ' | Out-File \"$dir\\zen.ps1\""
     ],
-    // "post_install": [
-    //     "zen.ps1 -CreateProfile \"Scoop-Opt $persist_dir\\profile\""
-    // ],
+    "post_install": [
+        "zen.ps1 -CreateProfile \"Scoop-Opt $persist_dir\\profile\""
+    ],
     "bin": "zen.ps1",
     // "persist": [
     //     "portable.ini",
