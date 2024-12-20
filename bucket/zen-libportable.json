@@ -4,7 +4,7 @@
     "homepage": "https://zen-browser.app/",
     "license": "MPL-2.0",
     "notes": [
-        "This program installation is an experiment. I looks like libportable can be used absent of patching and source code. I have yet to test full functionality of this method though.",
+        "This program installation is an experiment. I looks like libportable can be used absent of patching the source code. I have yet to test full functionality of this method though.",
         "",
         "To run Zen Browser know: libportable's setdll64.exe writes the current PATH in mozglue.dll and editing it directly fails to work. Therefore a new mozglue.dll must patched every time if the path is different. I made a script that automates this behavior:",
         "",
@@ -22,10 +22,9 @@
     "pre_install": [
         "if (!(installed 'libportable' $global))",
         "  { error 'Please install `libportable` first.' ; exit }",
-        "  if (!(Test-Path \"$persist_dir\\App\\portable.ini\" )) {",
-        "    (Get-Content -path \"$(appdir libportable $global)\\current\\portable(example).ini\" -Raw) -replace 'Update=1','Update=0' | Set-Content -Path \"$dir\\core\\portable.ini\" }",
-        "  Copy-Item \"$dir\\core\\mozglue.dll\" \"$dir\\core\\mozglue.dll.bck\"",
-        "  Copy-Item \"$(appdir libportable $global)\\current\\portable64.dll\" \"$dir\\core\\portable64.dll.bck\"",
+        "(Get-Content -path \"$(appdir libportable $global)\\current\\portable(example).ini\" -Raw) -replace 'Update=1','Update=0' | Set-Content -Path \"$dir\\portable.ini\"",
+        "  Copy-Item \"$dir\\mozglue.dll\" \"$dir\\mozglue.dll.bck\"",
+        "  Copy-Item \"$(appdir libportable $global)\\current\\portable64.dll\" \"$dir\\portable64.dll.bck\"",
         "  Write-Output '",
         "$DIR_ZEN = \"$env:SCOOP\\apps\\zen-libportable\\current\"",
         "if ( Select-String -SimpleMatch $env:USERPROFILE $DIR_ZEN\\mozglue.dll ) {",
@@ -35,22 +34,14 @@
         "  Copy-Item -Force $DIR_ZEN\\portable64.dll.bck $DIR_ZEN\\portable64.dll",
         "  setdll64.exe  /d:$DIR_ZEN\\portable64.dll     $DIR_ZEN\\mozglue.dll",
         "  . $DIR_ZEN\\floorp.exe }",
-        "  ' | Out-File \"$dir\\core\\floorp.ps1\""
-    ],
-    "post_install": [
-        "zen.ps1 -CreateProfile \"Scoop-Opt $persist_dir\\profile\"",
-        "$Addition = \"$persist_dir\\addition\"",
-        "if (Test-Path $Addition) {",
-        "  info 'Copying additional items...'",
-        "  Copy-Item -Path $Addition\\* -Destination $dir -Force -Recurse -ErrorAction SilentlyContinue",
-        "}"
+        "  ' | Out-File \"$dir\\zen.ps1\""
     ],
     "bin": "zen.ps1",
-    "persist": [
-        "portable.ini",
-        "Profiles",
-        "Plugins"
-    ],
+    // "persist": [
+    //     "portable.ini",
+    //     "Profiles",
+    //     "Plugins"
+    // ],
     "checkver": {
         "url": "https://api.github.com/repos/zen-browser/desktop/releases?per_page=1",
         "jsonpath": "$[0].tag_name"
