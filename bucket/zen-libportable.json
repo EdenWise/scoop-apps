@@ -1,5 +1,5 @@
 {
-    "version": "1.0.2-b.1",
+    "version": "1.0.2-t.4",
     "description": "Experience tranquillity while browsing the web without people tracking you (libportable patched).",
     "homepage": "https://zen-browser.app/",
     "license": "MPL-2.0",
@@ -13,11 +13,10 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/zen-browser/desktop/releases/download/1.0.2-b.1/zen.win-arm64.zip",
-            "hash": "56D61E7B6079D2F43FC8C267AD7F28C55DCAC102499E3BE86631336060C80DEB"
+            "url": "https://github.com/zen-browser/desktop/releases/download/twilight/zen.win-specific.zip",
+            "hash": "58D257F8B56662E3E721D855070AB591F971972DED0E4A05897828BC555C7851"
         }
     },
-    "extract_dir": "zen.win-arm64\\zen",
     "depends": "hoilc_scoop-lemon/libportable",
     "pre_install": [
         "if (!(installed 'libportable' $global))",
@@ -26,7 +25,7 @@
         "  Copy-Item \"$dir\\mozglue.dll\" \"$dir\\mozglue.dll.bck\"",
         "  Copy-Item \"$(appdir libportable $global)\\current\\portable64.dll\" \"$dir\\portable64.dll.bck\"",
         "  Write-Output '",
-        "$DIR_ZEN = \"$env:SCOOP\\apps\\zen-libportable\\current\"",
+        "$DIR_ZEN = \"$env:SCOOP\\apps\\zen-libportable\\current\\zen\"",
         "if ( Select-String -SimpleMatch $env:USERPROFILE $DIR_ZEN\\mozglue.dll ) {",
         "  . $DIR_ZEN\\zen.exe }",
         "else {",
@@ -36,9 +35,9 @@
         "  . $DIR_ZEN\\zen.exe }",
         "  ' | Out-File \"$dir\\zen.ps1\""
     ],
-    "post_install": [
-        "zen.ps1 -CreateProfile \"Scoop-Opt $persist_dir\\profile\""
-    ],
+    // "post_install": [
+    //     "zen.ps1 -CreateProfile \"Scoop-Opt $persist_dir\\profile\""
+    // ],
     "bin": "zen.ps1",
     // "persist": [
     //     "portable.ini",
@@ -50,10 +49,6 @@
         "jsonpath": "$[0].tag_name"
     },
     "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://github.com/zen-browser/desktop/releases/download/$version/zen.win-arm64.zip"
-            }
-        }
+        "url": "https://github.com/zen-browser/desktop/releases/download/twilight/zen.win-specific.zip"
     }
 }
