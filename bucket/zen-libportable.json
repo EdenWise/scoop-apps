@@ -21,9 +21,9 @@
     "pre_install": [
         "if (!(installed 'libportable' $global))",
         "  { error 'Please install `libportable` first.' ; exit }",
-        "(Get-Content -path \"$(appdir libportable $global)\\current\\portable(example).ini\" -Raw) -replace 'Update=1','Update=0' | Set-Content -Path \"$dir\\portable.ini\"",
-        "  Copy-Item \"$dir\\mozglue.dll\" \"$dir\\mozglue.dll.bck\"",
-        "  Copy-Item \"$(appdir libportable $global)\\current\\portable64.dll\" \"$dir\\portable64.dll.bck\"",
+        "(Get-Content -path \"$(appdir libportable $global)\\current\\portable(example).ini\" -Raw) -replace 'Update=1','Update=0' | Set-Content -Path \"$dir\\zen\\portable.ini\"",
+        "  Copy-Item \"$dir\\zen\\mozglue.dll\" \"$dir\\zen\\mozglue.dll.bck\"",
+        "  Copy-Item \"$(appdir libportable $global)\\current\\portable64.dll\" \"$dir\\zen\\portable64.dll.bck\"",
         "  Write-Output '",
         "$DIR_ZEN = \"$env:SCOOP\\apps\\zen-libportable\\current\\zen\"",
         "if ( Select-String -SimpleMatch $env:USERPROFILE $DIR_ZEN\\mozglue.dll ) {",
@@ -33,17 +33,16 @@
         "  Copy-Item -Force $DIR_ZEN\\portable64.dll.bck $DIR_ZEN\\portable64.dll",
         "  setdll64.exe  /d:$DIR_ZEN\\portable64.dll     $DIR_ZEN\\mozglue.dll",
         "  . $DIR_ZEN\\zen.exe }",
-        "  ' | Out-File \"$dir\\zen.ps1\""
+        "  ' | Out-File \"$dir\\zen\\zen.ps1\""
     ],
     "post_install": [
         "zen.ps1 -CreateProfile \"Scoop-Opt $persist_dir\\profile\""
     ],
-    "bin": "zen.ps1",
-    // "persist": [
-    //     "portable.ini",
-    //     "Profiles",
-    //     "Plugins"
-    // ],
+    "bin": "zen\\zen.ps1",
+    "persist": [
+        "zen\\portable.ini",
+        "Profiles",
+    ],
     "checkver": {
         "url": "https://api.github.com/repos/zen-browser/desktop/releases?per_page=1",
         "jsonpath": "$[0].tag_name"
