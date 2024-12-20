@@ -41,7 +41,7 @@
     "bin": "zen\\zen.ps1",
     "persist": [
         "zen\\portable.ini",
-        "Profiles",
+        "Profiles"
     ],
     "checkver": {
         "url": "https://api.github.com/repos/zen-browser/desktop/releases?per_page=1",
