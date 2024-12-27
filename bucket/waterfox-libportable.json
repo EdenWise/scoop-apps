@@ -35,8 +35,8 @@
         "(Get-Content -path \"$(appdir libportable $global)\\current\\portable(example).ini\" -Raw) -replace 'Update=1','Update=0' | Set-Content -Path \"$dir\\core\\portable.ini\"",
         "Move-Item \"$dir\\vcruntime140.dll\"   \"$dir\\core\"",
         "Move-Item \"$dir\\vcruntime140_1.dll\" \"$dir\\core\"",
-        "Move-Item \"$dir\\waterfox.ps1\" \"$dir\\core\"",
-        "Copy-Item \"$dir\\core\\mozglue.dll\" \"$dir\\core\\mozglue.dll.bck\"",
+        "Move-Item \"$dir\\waterfox.ps1\"       \"$dir\\core\"",
+        "Copy-Item \"$dir\\core\\mozglue.dll\"  \"$dir\\core\\mozglue.dll.bck\"",
         "Copy-Item \"$(appdir libportable $global)\\current\\portable64.dll\" \"$dir\\core\\portable64.dll.bck\""
     ],
     "bin": "core\\waterfox.ps1",
