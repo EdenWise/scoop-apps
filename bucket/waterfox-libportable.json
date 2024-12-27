@@ -39,11 +39,10 @@
         "Copy-Item \"$dir\\core\\mozglue.dll\" \"$dir\\core\\mozglue.dll.bck\"",
         "Copy-Item \"$(appdir libportable $global)\\current\\portable64.dll\" \"$dir\\core\\portable64.dll.bck\""
     ],
-    "post_install": "waterfox.ps1 -CreateProfile \"Default $persist_dir\\Profiles\"",
     "bin": "core\\waterfox.ps1",
     "shortcuts": [
         [
-            "waterfox.ps1",
+            "core\\waterfox.ps1",
             "Waterfox"
         ]
     ],
