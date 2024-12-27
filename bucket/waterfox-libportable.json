@@ -1,5 +1,4 @@
 {
-    // FAILED: Binary (likely needs to be patched before setddl64.exe can be used.s)
     "version": "6.5.2",
     "description": "Waterfox is a free and open-source web browser and fork of Firefox. Ethical and user-centric, emphasizing performance and privacy.",
     "homepage": "https://www.waterfox.net",
@@ -28,7 +27,6 @@
             ]
         }
     },
-    // "extract_dir": "core",
     "depends": "hoilc_scoop-lemon/libportable",
     "pre_install": [
         "Remove-Item \"$dir\\setup.exe\"",
