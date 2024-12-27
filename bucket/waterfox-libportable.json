@@ -31,12 +31,18 @@
         "if (!(installed 'libportable' $global))",
         "  { error 'Please install `libportable` first.' ; exit }",
         "(Get-Content -path \"$(appdir libportable $global)\\current\\portable(example).ini\" -Raw) -replace 'Update=1','Update=0' | Set-Content -Path \"$dir\\core\\portable.ini\"",
-        "Move-Item $dir\\waterfox.ps1 $dir\\core",
+        "Move-Item \"$dir\\waterfox.ps1\" \"$dir\\core\"",
         "Copy-Item \"$dir\\core\\mozglue.dll\" \"$dir\\core\\mozglue.dll.bck\"",
         "Copy-Item \"$(appdir libportable $global)\\current\\portable64.dll\" \"$dir\\core\\portable64.dll.bck\"",
     ],
-    "post_install": "waterfox.ps1 -CreateProfile \"Scoop $persist_dir\\Profiles\"",
+    "post_install": "waterfox.ps1 -CreateProfile \"Default $persist_dir\\Profiles\"",
     "bin": "core\\waterfox.ps1",
+    "shortcuts": [
+        [
+            "waterfox.ps1",
+            "Waterfox"
+        ]
+    ],
     "persist": [
         "Profiles"
     ],
