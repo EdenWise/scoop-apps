@@ -19,7 +19,9 @@
                 "https://gist.githubusercontent.com/EdenWise/f075a35218f772dfd9d46db4d02e1ad7/raw/e8acee46ac0753dc7bf97f5dfc3c7f876aa17670/waterfox.ps1"
             ],
             "hash": [
-                "sha512:BB667DFC876C5051107706C92414912D4B44FA9AC8D1402701676741AFA830BC799CD4617DCBB4CD544D4A33B96CE76D9B93BCD9BC03E2AF59E780660CB1A9CB"
+                "sha512:BB667DFC876C5051107706C92414912D4B44FA9AC8D1402701676741AFA830BC799CD4617DCBB4CD544D4A33B96CE76D9B93BCD9BC03E2AF59E780660CB1A9CB",
+                "sha512:1389332C7F37E515BD2A9F5A0223DA2454A7FDC9DCBC47A21C82285CA9B54DDD00ED6620E5A55C71175270A253E860D568FAA1BB354E3093C323D71699FACBFB"
+            ]
         }
     },
     // "extract_dir": "core",
@@ -29,18 +31,9 @@
         "if (!(installed 'libportable' $global))",
         "  { error 'Please install `libportable` first.' ; exit }",
         "(Get-Content -path \"$(appdir libportable $global)\\current\\portable(example).ini\" -Raw) -replace 'Update=1','Update=0' | Set-Content -Path \"$dir\\core\\portable.ini\"",
-        "  Copy-Item \"$dir\\core\\mozglue.dll\" \"$dir\\core\\mozglue.dll.bck\"",
-        "  Copy-Item \"$(appdir libportable $global)\\current\\portable64.dll\" \"$dir\\core\\portable64.dll.bck\"",
-        "  Write-Output '",
-        "$DIR_BRW = \"$env:SCOOP\\apps\\waterfox-libportable\\current\\core\"",
-        "if ( Select-String -SimpleMatch $env:USERPROFILE $DIR_BRW\\mozglue.dll ) {",
-        "  . $DIR_BRW\\waterfox.exe }",
-        "else {",
-        "  Copy-Item -Force $DIR_BRW\\mozglue.dll.bck    $DIR_BRW\\mozglue.dll",
-        "  Copy-Item -Force $DIR_BRW\\portable64.dll.bck $DIR_BRW\\portable64.dll",
-        "  setdll64.exe  /d:$DIR_BRW\\portable64.dll     $DIR_BRW\\mozglue.dll",
-        "  . $DIR_BRW\\waterfox.exe }",
-        "  ' | Out-File \"$dir\\core\\waterfox.ps1\""
+        "Move-Item $dir\\waterfox.ps1 $dir\\core",
+        "Copy-Item \"$dir\\core\\mozglue.dll\" \"$dir\\core\\mozglue.dll.bck\"",
+        "Copy-Item \"$(appdir libportable $global)\\current\\portable64.dll\" \"$dir\\core\\portable64.dll.bck\"",
     ],
     "post_install": "waterfox.ps1 -CreateProfile \"Scoop $persist_dir\\Profiles\"",
     "bin": "core\\waterfox.ps1",
