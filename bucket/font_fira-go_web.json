@@ -2,7 +2,7 @@
     "version": "1.0",
     "description": "Fira Sans is a humanist sans-serif typeface optimized for legibility on (small) screens..",
     "homepage": "https://bboxtype.com/typefaces/FiraGO",
-    "license": "Apache-2.0",
+    "license": "OFL-1.1",
     "notes":  [
         "To install:",
         "",
@@ -13,9 +13,13 @@
         "control.exe fonts",
         ""
     ],
-    "url": "https://github.com/googlefonts/roboto-2/releases/download/v2.136/roboto-hinted.zip",
-    "hash": "C4528791DE55ADE3D6C698738A70B457311E4DD296C5A3318AA729874067FA6A",
-    "extract_dir": "roboto-hinted"
+    "url": [
+        "https://github.com/googlefonts/roboto-2/releases/download/v2.136/roboto-hinted.zip"
+    ],
+    "hash": [
+        "C4528791DE55ADE3D6C698738A70B457311E4DD296C5A3318AA729874067FA6A"
+    ],
+    "extract_dir": "roboto-hinted",
     "autoupdate": {
         "url": "https://fonts.google.com/download?family=Roboto#/dl.7z"
     }
