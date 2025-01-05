@@ -3,7 +3,7 @@
     "description": "Font from Google, signature family for san-serif typefaces.",
     "homepage": "https://github.com/googlefonts/roboto-2",
     "license": "Apache-2.0",
-    "notes":  [
+    "notes": [
         "To install:",
         "",
         "https://gist.github.com/EdenWise/7a2f40dbd4bc164c62373673c921949e",
