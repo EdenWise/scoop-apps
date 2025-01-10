@@ -14,9 +14,9 @@
         ""
     ],
     "url": [
-        "https://raw.githubusercontent.com/bBoxType/FiraSans/blob/master/Fira_Mono_3_2/Fonts/FiraMono_OTF_32/FiraMono-Bold.otf",
-        "https://raw.githubusercontent.com/bBoxType/FiraSans/blob/master/Fira_Mono_3_2/Fonts/FiraMono_OTF_32/FiraMono-Medium.otf",
-        "https://raw.githubusercontent.com/bBoxType/FiraSans/blob/master/Fira_Mono_3_2/Fonts/FiraMono_OTF_32/FiraMono-Regular.otf"
+        "https://raw.githubusercontent.com/bBoxType/FiraSans/refs/heads/master/Fira_Mono_3_2/Fonts/FiraMono_OTF_32/FiraMono-Bold.otf",
+        "https://raw.githubusercontent.com/bBoxType/FiraSans/refs/heads/master/Fira_Mono_3_2/Fonts/FiraMono_OTF_32/FiraMono-Medium.otf",
+        "https://raw.githubusercontent.com/bBoxType/FiraSans/refs/heads/master/Fira_Mono_3_2/Fonts/FiraMono_OTF_32/FiraMono-Regular.otf"
     ],
     "hash": [
         "sha512:CB2FB2977D2A602E3FB6D2449FBC949DC027C8CE649C39DAAD0DD67FE2AA75C5E42E44BBC8790DB918DADA1E33DC27AD8BA44C256812B5F6203DA1DFC3788567",
